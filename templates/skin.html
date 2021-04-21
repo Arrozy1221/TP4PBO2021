@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <title>Data Mahasiswa</title>
+
+  <!-- untuk style -->
+  <style>
+    .header {
+      padding: auto;
+      margin: auto;
+    }
+
+    .judul {
+      color: #e8e8e8;
+      text-align: center;
+      background-color: #3c09c9;
+      text-shadow: 2px 2px 5px rgb(55, 0, 255);
+      padding: 20px;
+    }
+
+    .bar {
+
+      text-align: center;
+      font-family: Century Gothic;
+    }
+
+    .bar ul {
+      background: #30475e;
+      list-style: none;
+      position: relative;
+      display: inline-table;
+      width: 100%;
+      padding: 0 1px;
+    }
+
+    .bar ul li {
+      float: left;
+    }
+
+    .bar ul li:hover {
+      background: #16a085;
+
+    }
+
+    .bar ul li:hover a {
+      color: snow;
+    }
+
+    .bar ul li a {
+      display: block;
+      padding: 10px;
+      color: #bdc3c7;
+      text-decoration: none;
+
+    }
+
+    .tulisan {
+      margin-top: -40px;
+      text-align: left;
+
+    }
+
+    .footer {
+      background-color: #222831;
+      color: #e8e8e8;
+      width: 100%;
+      position: absolute;
+    }
+
+    .footer p {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    h4 {
+      color: #1506e4;
+      font-family: Century Gothic;
+    }
+
+    .i {
+      border-radius: 5px;
+      border: 2px solid rgb(128, 128, 128);
+      padding: 40px;
+      width: 40%;
+      margin: 5px;
+      margin-top: -15px;
+
+    }
+
+    .s {
+
+      padding-top: 2px;
+      width: 37%;
+      margin: 5px auto;
+      margin-top: -15px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- untuk bagian head -->
+  <div class="header">
+    <!-- untuk bagian judul  -->
+    <div class="judul">
+      <h1>Data Mahasiswa</h1>
+    </div>
+
+
+    <!-- untuk bangian body -->
+    <div style="margin: 5%">
+      <div class="tulisan">
+        <h4 id="f"><b>Form Pengisian</b></h4>
+      </div>
+
+      <br>
+
+      <!-- bagian form -->
+      <form class="i" action="index.php" method="POST">
+        <!-- untuk bangian NIM -->
+        <div class="form-col">
+          <div class="form-group">
+            <label for="nim">NIM</label>
+            <input type="text" class="form-control" name="nim" required />
+          </div>
+        </div>
+
+        <!-- untuk bagian nama_mahasiswa -->
+        <div class="form-col">
+          <div class="form-group">
+            <label for="nama_mahasiswa">Nama Mahasiswa</label>
+            <input type="text" class="form-control" name="nama_mahasiswa" required />
+          </div>
+        </div>
+
+        <!-- untuk bagian gender -->
+        <div class="col">
+          <div class="form-group ">
+            <label for="gender">Jenis Kelamin</label>
+            <div class="col-sm-10">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="gender2" value="Pria" />
+                <label class="form-check-label" for="tsubject2">Pria</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="gender1" value="Wanita" />
+                <label class="form-check-label" for="tsubject1">Wanita</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- untuk bagian tanggal lahir -->
+        <div class="form-col">
+          <div class="form-group">
+            <label for="tanggal_lahir">Tanggal Lahir</label>
+            <input class="form-control" type="date" name="tanggal_lahir" required />
+          </div>
+        </div>
+
+        <!-- untuk bagian matakuliah -->
+        <div class="form-col">
+          <div class="form-group">
+            <label for="kelas">Kelas</label>
+            <textarea class="form-control" name="kelas" rows="3" required></textarea>
+          </div>
+        </div>
+
+        <!-- button add -->
+        <button type="submit" name="add" class="btn btn-primary">Add</button>
+      </form>
+      <br>
+      <!-- bagian Sort -->
+      <div>
+        <label class="s">Sort Ascending</label>
+        <br>
+        <form action="index.php" method="POST">
+          <button type="submit" name="nim" class="btn btn-secondary">NIM</button>
+          <button type="submit" name="nama_Mahasiswa" class="btn btn-secondary">Nama Mahasiswa</button>
+          <button type="submit" name="gender" class="btn btn-secondary">Jenis Kelamin</button>
+          <button type="submit" name="tanggal_lahir" class="btn btn-secondary">TTL</button>
+          <button type="submit" name="kelas" class="btn btn-secondary">Kelas</button>
+          <button type="submit" name="status" class="btn btn-secondary">Status</button>
+        </form>
+      </div>
+
+      <br>
+      <br>
+
+      <!-- Tabel Data Mahasiswa -->
+      <div style="display: inline-block; ">
+        <h4 id="l" style="text-align: center; "><b>List Mahasiswa</b></h4>
+        <!-- TABEL1 -->
+        <table align="left" border="1" style="text-align: center;">
+          <tr>
+            <td style="width: 2%;">No</td>
+            <td style="width: 5%;">NIM</td>
+            <td style="width: 11%;">Nama Mahasiswa</td>
+            <td style="width: 5%;">Jenis Kelamin</td>
+            <td style="width: 7%;">Tanggal Lahir</td>
+            <td style="width: 11%;">Kelas</td>
+            <td style="width: 4%;">Status</td>
+            <td style="width: 6%;"></td>
+          </tr>
+          <tr>
+            <!-- DATA YG AKAN DIGANTI -->
+            DATA_TABEL
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+    <!-- bagian bawah -->
+    <div class="footer">
+      <p>&copy 2021 | ARROZY ADI FALAQI | 1908853 </p>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+      </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+      </script>
+</body>
+
+</html>

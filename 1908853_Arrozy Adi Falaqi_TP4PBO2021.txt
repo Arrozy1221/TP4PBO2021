@@ -1,0 +1,9 @@
+<?php
+
+/******************************************
+TP4 PBO
+ ******************************************/
+
+// Saya Arrozy Adi Falaqi mengerjakan TP4 dalam mata kuliah PBO
+// untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah di spesifikasikan.
+// Aamiin.
